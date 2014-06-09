@@ -42,9 +42,9 @@ source $BP_DIR/bin/common.sh
 export_env_dir "$ENV_DIR" "" '^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH|LD_LIBRARY_PATH)$'
 
 BUILDPACK_URL=${BUILDPACK_URL:-} # Anvil has none
-BUILDPACK_BRANCH=$(expr "$BUILDPACK_URL" : '^.*/heroku-buildpack-php#\(..*\)$' || true)
+BUILDPACK_BRANCH=$(expr "$BUILDPACK_URL" : '^.*/heroku-buildpack-php-hhvm#\(..*\)$' || true)
 BUILDPACK_BRANCH=${BUILDPACK_BRANCH:-master}
-BUILDPACK_OWNER=$(expr "$BUILDPACK_URL" : '^.*/\(..*\)/heroku-buildpack-php' || true)
+BUILDPACK_OWNER=$(expr "$BUILDPACK_URL" : '^.*/\(..*\)/heroku-buildpack-php-hhvm' || true)
 
 S3_URL="beta"
 if [[ "$BUILDPACK_BRANCH" != "beta" && "$BUILDPACK_BRANCH" != "master" ]]; then
